@@ -1,2 +1,7 @@
 print("hello world")
 print("hello me")
+print("hello vasya")
+print("hello petya")
+print("hellow mom")
+print("hello internet")
+print("hello all")
