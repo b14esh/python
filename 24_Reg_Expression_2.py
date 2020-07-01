@@ -35,8 +35,3 @@ for item in totalresult:
     print(item + totalresult[item])
     resultfile.write(item + totalresult[item] + "\n")
 print(f"Total: {str(len(results))}")
-
-
-
-#print(enemy.keys())
-#print(enemy.values())
