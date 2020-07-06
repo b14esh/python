@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Add my web page1
+    'page1',
+    'page2',
+
 ]
 
 MIDDLEWARE = [
