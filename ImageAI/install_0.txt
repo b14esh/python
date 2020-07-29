@@ -1,0 +1,4 @@
+# pip install -U tensorflow
+# pip install opencv-python
+# pip install keras
+# pip install imageai --upgrade
