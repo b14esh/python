@@ -1,14 +1,3 @@
-# цыклы for
-# работает со строками и списками
-pp = "\n\n#--------------------------------------------\n"
-
-for j in 'hello world':
-    print(j * 2)
-print(pp)
-
-for j in 'hello world':
-    print(j * 2, end = '')
-print(pp)
-for j in 'hello world':
-    print(j * 5, end = '')
-print(pp)
+version https://git-lfs.github.com/spec/v1
+oid sha256:913371f19e2fe757e2efff9204991b660361b050041d264a5ae834c5ca361ad9
+size 324

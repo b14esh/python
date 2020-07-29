@@ -1,4 +1,3 @@
-# pip install -U tensorflow
-# pip install opencv-python
-# pip install keras
-# pip install imageai --upgrade
+version https://git-lfs.github.com/spec/v1
+oid sha256:f6a3ce443a6845422472936fb9977fad2f92374c6b2b1f2fc7c794451ecc314c
+size 110

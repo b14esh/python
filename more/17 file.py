@@ -1,13 +1,3 @@
-input_file = "text.txt" # файл который будем читать
-output_file =  "outfile.txt" # файл в который будем записывать
-look_for = "TEST" #что будем икать
-
-myfile1  = open(input_file)  #Это строка открывает файл на чтение
-myfile2  = open(output_file, 'a') #Эта строка позволит дописывать в файл (mode='a')
-
-for num, line in enumerate(myfile1,1):  #  Читается файл text.txt и записывается в другой файл outfile.txt  искомую строку со словом TEST
-    if look_for in line:
-      print("Line № " + str(num) + " : " + line.strip())
-      myfile2.write(f"look for: {line}")
-myfile1.close()
-myfile2.close()
+version https://git-lfs.github.com/spec/v1
+oid sha256:bcfd6c8844a4ea4b841c00bdda31c5ce27e452fb1e578bd334dc7f5dd7a43be4
+size 791

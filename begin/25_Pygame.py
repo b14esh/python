@@ -1,14 +1,3 @@
-# Picharm -> settings -> pluse -> search pygame -> install
-# windows cmd -> python -m pip install --user pygame
-
-#import pygame.examples.stars # установим игруху из примеров stars
-#import pygame.examples.cursors
-#pygame.examples.stars.main() # запуск игры
-#pygame.examples.cursors.main()
-
-import pygame
-pygame.init()
-screen = pygame.display.set_mode((640, 480))
-
-while True:
-    pygame.display.flip()
+version https://git-lfs.github.com/spec/v1
+oid sha256:ac54cb621527d52ce1507f3056c21855914ab10bb0cc0d04a229f48886470768
+size 450

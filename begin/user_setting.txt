@@ -1,1 +1,3 @@
-[{"PlayerName": "Chuvak", "Score": 345, "Awards": ["OR", "New", "ZZ"]}, {"PlayerName": "Osip", "Score": 345, "Awards": ["WI", "TX", "Miss"]}]
+version https://git-lfs.github.com/spec/v1
+oid sha256:3d4edb2b0d92a744c7bc999c8e56a8125e7d1812ea8294ad695ea5dac3ffdeaf
+size 141

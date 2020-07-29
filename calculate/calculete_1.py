@@ -1,19 +1,3 @@
-# Дебильный калькулято v1
-what = input("Что делаем? (+, -,):")
-
-# Так как imput ввсегда возрощает строки то нам надо перделать строку в число
-# Есть специальные функции bool(), float(), str(), int()
-# float() весещственное / число с  точкой запятой
-# int() целочисленное
-a = float(input("Введи первое число: "))
-b = float(input("Введи второе число: "))
-
-# условия if
-if what == "+":
-    c = a + b
-    print("Результат: " + str(c))
-elif what == "-":
-    c = a - b
-    print("Результат: " + str(c))
-else:
-    print("Выбрана не верная операция")
+version https://git-lfs.github.com/spec/v1
+oid sha256:a0ecb04fcf2303828f1f32b2d4cc24127bbb3f8a96ffe8fdc97984346e6a1266
+size 793
