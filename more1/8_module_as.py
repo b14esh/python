@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ef03068ab39b13979845181eb196d69d1d3f8f761a03639bec880a311ab12e52
-size 390
+# подключить функцию под другим именем
+# пригодится например если вдруг у вас уже есть своя функция
+# пример на модуле math функция sqrt
+# Лутче этого не допускать
+from math import sqrt as my_sqrt
+def sqrt():
+    print("my function")
+print(my_sqrt(25))
+sqrt()

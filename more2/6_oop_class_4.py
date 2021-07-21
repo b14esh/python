@@ -1,3 +1,46 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:05e47cc99daf58c9e74a499dbb89d4aa6c85a6776adc18b39d75d6e1323d43f5
-size 1315
+# Свойства на доступ
+
+class Character():
+    MAX_SPEED = 100
+
+    def __init__(self, race, damage=10):
+        self.__race = race # Обьевление приватного атрибута \ два символа "__" \ к атрибуту можно будет обратится по _Character__race
+        self.damage = damage
+        self._health = 100 # Обьявление защищенного атрибута одно нижние подчеркивание \ символ "_"
+        self._current_speed = 20
+
+    def hit(self, damage):
+        self.damage = damage
+
+    @property
+    def health(self):
+        return self._health
+
+    @property
+    def race(self):
+        return self.__race
+
+    @property
+    def current_speed(self):
+        return self._current_speed
+
+    @current_speed.setter
+    def current_speed(self, current_speed):
+          if current_speed < 0:
+              self._current_speed = 0
+          elif current_speed > 100:
+              self._current_speed = 100
+          else:
+              self._current_speed = current_speed
+
+c = Character('Elf')
+
+print(c.current_speed)
+c.current_speed = 55
+print(c.current_speed)
+
+c.current_speed = 1000
+print(c.current_speed)
+
+c.current_speed = -100
+print(c.current_speed)

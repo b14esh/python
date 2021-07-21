@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:adb881f6eecc3551cee4c1324e10aec47ea129e98d75c6e555d36a779d0130c6
-size 212
+*.jpg filter=lfs diff=lfs merge=lfs -text
+*.h5 filter=lfs diff=lfs merge=lfs -text
+*.psd filter=lfs diff=lfs merge=lfs -text
+*.avi filter=lfs diff=lfs merge=lfs -text
+*.mp3 filter=lfs diff=lfs merge=lfs -text
+resnet50_coco_best_v2.0.1.h5 filter=lfs diff=lfs merge=lfs -text

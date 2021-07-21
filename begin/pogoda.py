@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a4f86b48acaac15f65ed9b407d664b77cc0d4d919aefe1ebc8f4f96d15f59777
-size 270
+import requests
+url = 'https://wttr.in'
+weather_parameters = {
+    '0': '',
+    'T': '',
+    'M': '',
+    'lang': 'ru'
+}
+response = requests.get(url, params=weather_parameters)  # передайте параметры в http-запрос
+
+print(response.text)

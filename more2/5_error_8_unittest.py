@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a6a66588004533e1b4d75b5e9df1a991a1cafca6d968ef3ada83684372c4fb6e
-size 532
+import unittest
+import fizzbuzz
+class FizzBuzzTest(unittest.TestCase):
+    def test_fizz(self):
+        number=6
+        result = fizzbuzz.get_reply(number)
+        self.assertEqual(result, 'Fizz')
+
+    def test_buzz(self):
+        number=10
+        result = fizzbuzz.get_reply(number)
+        self.assertEqual(result, 'Buzz')
+
+    def test_fizzbuzz(self):
+        number = 15
+        result = fizzbuzz.get_reply(number)
+        self.assertEqual(result, 'FizzBuzz')
+
+if __name__ == '__main__':
+    unittest.main()

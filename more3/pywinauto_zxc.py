@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e4c3c34b367f9a056a3d703c025a8dd572a807a8d7fafbda0b3bb5fd784e4712
-size 592
+# pywinauto - модуль для работы с gui, нажимает клавиши
+# Русский язык поддерживается
+# https://github.com/pywinauto/pywinauto/tree/master/examples - примеры
+
+
+# Пример открываем блокнот и наченаем печатать
+from pywinauto import Application
+
+app = Application().start('notepad.exe')
+app.UntitledNotepad.Edit.send_chars('Hello World!') # не нужен GUI context
+app.UntitledNotepad.Edit.type_keys('\nTyping to the active window...', with_newlines=True) # нужен GUI context

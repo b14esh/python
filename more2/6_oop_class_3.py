@@ -1,3 +1,35 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:280a13ac48772ef27701c07f12bc80c9051f50faaf181123fc47e4d237b07887
-size 1094
+# Свойства
+
+class Character():
+    MAX_SPEED = 100
+
+    def __init__(self, race, damage=10):
+        self.__race = race # Обьевление приватного атрибута \ два символа "__" \ к атрибуту можно будет обратится по _Character__race
+        self.damage = damage
+        self._health = 100 # Обьявление защищенного атрибута одно нижние подчеркивание \ символ "_"
+
+    def hit(self, damage):
+        self.damage = damage
+
+    @property
+    def health(self):
+        return self._health
+
+    @property
+    def race(self):
+        return self.__race
+c = Character('Elf')
+c._Character__race = "Ork"
+print(c._Character__race)
+
+c._health = 0
+print(c._health)
+
+
+print(c.health)
+print(c.race)
+
+
+
+#c.health  = -1000 # Не возвможнл изменить  \  будет ошибка AttributeError: can't set attribute
+#c.race = "Z" # Не возвможнл изменить  \ будет ошибка AttributeError: can't set attribute

@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:31aaf3f69d15ecefa0d9b7ea43848fb612a5b3e429414ffae7f0d6d482b36685
-size 283
+# https://pypi.org/project/PyAutoIt/
+
+import autoit
+
+autoit.run("notepad.exe")
+autoit.win_wait_active("[CLASS:Notepad]", 3)
+autoit.control_send("[CLASS:Notepad]", "Edit1", "hello world{!}")
+autoit.win_close("[CLASS:Notepad]")
+autoit.control_click("[Class:#32770]", "Button2")

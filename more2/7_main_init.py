@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:56711993615c53df30a769f1581126ee7e9dc4561f5689064c746426a88a1147
-size 288
+def to_inches(cm):
+    return cm*0.393701
+
+def to_miles(km):
+    return km*0.621371
+
+def to_fahrenheit(celsius):
+    return (celsius*9/5)+32
+
+if   __name__ == '__main__':
+    print('call a converting func that you want')
+else:
+    print('was imported (not executed directly)')

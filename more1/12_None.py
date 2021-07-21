@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9c290e10cd582e3afc70b18998e14d8da0dbd3b74d5288b6f14a1259f1768a85
-size 377
+# Тип данных None
+# обозначет пустоту
+# В булевых значениях будет False
+#Test = ''
+#Test = 0
+#Test = None
+
+Test = None
+print(Test)
+
+test = None
+if(test == None):
+    print('Тест')
+
+def test():
+    print('TEST')
+
+azaza = test()
+print(azaza)
+
+foo = print()
+if foo == None:
+    print(1)
+else:
+    print(2)

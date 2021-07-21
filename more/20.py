@@ -1,3 +1,32 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:106644db66c506cf5e550acea29af3530fe28b5f9e5308ff31296177b12bda86
-size 715
+# ООП - Объектно-ориентированное программирование
+# классы -> обьекты -> методы, события, свойства
+from modpp import pp
+#class Person:
+#    name = "Ivan"
+#    age = 10
+
+#vlad = Person()
+#vlad.name = "Влад"
+#ivan = Person()
+#ivan.age = 45
+#print(vlad.name)
+#print(ivan.name)
+#print(ivan.age)
+pp()
+# Вот так
+
+class Person:
+    name = "Ivan"
+    age = 10
+    def set(self, name, age):
+        self.name = name
+        self.age = age
+
+vlad = Person()
+vlad.set ("Влад", 25)
+print(vlad.name + " " + str(vlad.age))
+
+ivan = Person()
+ivan.set ("Иван", 70)
+print(ivan.name + " " + str(ivan.age))
+pp()

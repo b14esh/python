@@ -1,3 +1,44 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9686e20a8b70068bea5c23e4ec47cb05219057980497c7e9e2c0825b5ad49c84
-size 973
+# операторы continue, break, else
+# continue - пропускает одну итерацию
+# break - прекращает дальнейшее выполнение, выходит из цикла
+# else - срабатывает если условие if не сработало
+pp = "\n\n#-------------------------------------------\n"
+print(pp)
+for j in 'hello world':
+    if j == 'w':
+        continue
+    print(j * 3, end = '')
+
+
+print(pp)
+
+for j in 'hello world':
+    if j != 'w':
+        continue
+    print(j * 2, end = '')
+
+print(pp)
+
+for j in 'hello world':
+    if j == 'w':
+        break
+    print(j * 4, end = '')
+
+print(pp)
+
+for j in 'hello world':
+    if j == 'a':
+        break
+    print(j , end='')
+else:
+    print("\nБуквы 'а' нету в строчке")
+
+print(pp)
+
+for j in 'hello world':
+    if j == 'a':
+        break
+else:
+    print("\nБуквы 'а' нету в строчке")
+
+print(pp)

@@ -1,3 +1,360 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0fa106ce10aba0b1154591a03377e1c0e71119845525e2805715b41a7fcd3e35
-size 11973
+# https://openweathermap.org/ - погода
+# https://www.djangoproject.com/ - django
+
+
+### создание файлов  сайта и приложения
+# console -> cmd
+# jango-admin startproject watherapp - создаем проект watherapp
+# cd watherapp - переходи в каталог проэкта
+# python manage.py startapp weather - создаем приложение ( это может быть форум, стартовая страница и т.д. ,  в нашем случае это будет страница погоды)
+
+
+
+### подключение приложения weather
+#  нужно отредактировать файл settings.py в каталоге watherapp
+# ищем следующий блог
+
+# Application definition
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+]
+
+# изменяем его. дописываем в конец списка INSTALLED_APPS наше приложение 'weather'
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'weather',
+]
+
+### Создание базы данных и добовляем админа
+python manage.py migrate - создаем базу
+python manage.py createsuperuser - задаем пароль суперпользователю
+
+### Запуск сервера
+python manage.py runserver
+
+
+
+# добавление и реактирование страниц
+### Редоктирование и создание главной страницы
+#  Требуется отредактировать файл urls.py  в каталоге watherapp
+# приводим вот к такому виду
+
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('',  include('weather.urls')),
+]
+
+# Далее создаем файл urls.py в каталоге приложения weather
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('',  views.index),
+]
+
+
+### Далее редактируем файл views.py
+from django.shortcuts import render
+def index(request):
+    return render(request, 'weather/index.html')
+
+# В каталоге watherapp создаем каталог template
+# В каталоге template создаем каталог weather
+# Создаем файл index.html
+# Редактируем его
+# добавив bootstrap -> https://getbootstrap.com/docs/4.5/getting-started/introduction/
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Погодное приложение</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+<h1> Погодное приложение </h1>
+</body>
+</html>
+
+# Запускаем webserver django и проверяем
+### Запуск сервера
+python manage.py runserver
+
+
+### Если все ок идем дальше
+# наводим красоту
+# идем на офф сайт bootstap  https://getbootstrap.com/
+# заходим в Examples
+# выбераем любой шаблон например pricing
+# жмем ПКМ и просмотр кода
+# наводим курсор на элемент каторый нас интересует и копируем его
+# например нам понравилось меню
+# редактируем наш index.html
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Погодное приложение</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+<h1> Погодное приложение </h1>
+</body>
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+  <h5 class="my-0 mr-md-auto font-weight-normal">Company name</h5>
+  <nav class="my-2 my-md-0 mr-md-3">
+    <a class="p-2 text-dark" href="#">Features</a>
+    <a class="p-2 text-dark" href="#">Enterprise</a>
+    <a class="p-2 text-dark" href="#">Support</a>
+    <a class="p-2 text-dark" href="#">Pricing</a>
+  </nav>
+  <a class="btn btn-outline-primary" href="#">Sign up</a>
+</div>
+</html>
+
+### Продолжаем наводить красоту
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Погодное приложение</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+
+
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+  <h5 class="my-0 mr-md-auto font-weight-normal">Погодное приложение</h5>
+  <nav class="my-2 my-md-0 mr-md-3">
+    <a class="p-2 text-dark" href="#">Support</a>
+    <a class="p-2 text-dark" href="#">Pricing</a>
+  </nav>
+</div>
+
+<div class = "col-5 offset-2">
+		<h1> Информация</h1>
+		<div class="alert alert-danger">
+			<b> Город: </b> {{ info.city}} <br>
+			<b> Температура: </b> {{info.temp}} <sup>o </sup> <br>
+			<img src="http://openweathermap.org/img/w/{{info.icon}}.png" alt="Фото погоды" class="img=thunbnail">
+		</div>
+</div>
+
+
+
+
+</body>
+</html>
+
+### далее нам надо получить API key на openweathermap.org
+https://openweathermap.org/current - ссылка с примерами
+https://samples.openweathermap.org/data/2.5/weather?q=London,uk&appid=APIKEY
+https://samples.openweathermap.org/data/2.5/weather?q=London,uk&appid=08ec16bd0e7f653424e087cdc7b7bfce
+
+
+### создаем табличку для городов
+# редактируем в weather файл models.py
+from django.db import models
+
+class City(models.Model):
+    name = models.CharField(max_length=30)
+
+    def __str__(self):
+        return self.name
+
+### теперь создаем ее
+python manage.py makemigrations
+python manage.py migrate
+
+
+### Теперь добавим ее в админку
+# редактируем в каталоге weather файл admin.py
+from django.contrib import admin
+from .models import City
+admin.site.register(City)
+
+# запускаем и проверяем
+python manage.py runserver
+
+### редактируем дальше views.py
+import requests
+from django.shortcuts import render
+from .models import City
+
+def index(request):
+    appid = '08ec16bd0e7f653424e087cdc7b7bfce'
+    url = 'https://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=' + appid
+
+
+    cities = City.objects.all()
+    all_cities = []
+    for city in cities:
+         res = requests.get(url.format(city.name)).json()
+         city_info = {
+              'city': city.name,
+              'temp': res["main"]["temp"],
+              'icon': res["weather"][0]["icon"],
+    }
+
+    all_cities.append(city_info)
+
+    context = {'all_info': all_cities}
+    return render(request, 'weather/index.html', context)
+
+
+#### еще покрутили index.html
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Погодное приложение</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+
+
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+  <h5 class="my-0 mr-md-auto font-weight-normal">Погодное приложение</h5>
+  <nav class="my-2 my-md-0 mr-md-3">
+    <a class="p-2 text-dark" href="#">Support</a>
+    <a class="p-2 text-dark" href="#">Pricing</a>
+  </nav>
+</div>
+
+<div class = "col-5 offset-2">
+    <h1> Информация</h1>
+    {% for info in all_info %}
+		<div class="alert alert-info">
+            <div class="row">
+                <div class="col-9">
+                    <b> Город:</b> {{info.city}}<br>
+                    <b> Температура:</b> {{info.temp}} <sup>o</sup> <br>
+                </div>
+                <div class="col-2 offset-1">
+                    <img src="http://openweathermap.org/img/w/{{info.icon}}.png" alt="Фото погоды" class="img=thunbnail">
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+
+
+
+</body>
+</html>
+
+
+#### и еще покрутили
+<!doctype html>
+<html lang="ru">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<title>Hello, world!</title>
+</head>
+<body>
+
+	<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+		<h5 class="my-0 mr-md-auto font-weight-normal"> Хрень работай</h5>
+		<nav class="my-2 my-md-0 mr-md-3">
+			<a class="p-2 text-dark" href="#">Новости</a>
+			<a class="p-2 text-dark" href="#">Контакты</a>
+		</nav>
+		<a class="btn btn-outline-primary" href="#">Документация</a>
+	</div>
+
+	<div class="container mt-5">
+		<div class="row">
+			<div class="col-5 offset-1">
+				<h1>Погодная инфа в вашем городе</h1>
+
+				<form action="" method="post">
+					{% csrf_token %}
+					<label for="city">Введите город:</label>
+					{{ form.name }}
+					<input type="submit" name="send" value="Добавить" class="mt-2 btn btn-danger">
+				</form>
+
+			</div>
+
+
+			<div class="col-4 offset-1">
+				<h1>Инфо: </h1>
+				{% for info in all_info %}
+				<div class="alert alert-success">
+					<div class="row">
+						<div class="col-8">
+							<b>Город: </b> {{info.city}} <br>
+							<b>Температура: </b> {{info.temp}}<sup>o</sup><br>
+						</div>
+						<div class="col-2 offset-1">
+							<img src="http://openweathermap.org/img/w/{{info.icon}}.png" alt="Фото погоды">
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+#### еще покрутили \ views.py
+import requests
+from django.shortcuts import render
+from .models import City
+
+def index(request):
+    appid = '08ec16bd0e7f653424e087cdc7b7bfce'
+    url = 'https://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=' + appid
+
+
+    cities = City.objects.all()
+
+    allcities = []
+
+    for city in cities:
+         res = requests.get(url.format(city.name)).json()
+
+         city_info = {
+              'city': city.name,
+              'temp': res["main"]["temp"],
+              'icon': res["weather"][0]["icon"]
+         }
+
+         allcities.append(city_info)
+
+    context = {'all_info': allcities}
+    return render(request, 'weather/index.html', context)
+
+
+### создаем файл для форм
+# в каталоге weather создаем файл forms.py

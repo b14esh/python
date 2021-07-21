@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:04c64c74c02f0ffd5aa1f2ad302682598da13870776c8332bba477c41618ef6b
-size 484
+#def divide(a,b):
+#    return a / b
+
+
+def divide(a,b):
+    try:
+        return a / b
+    except ZeroDivisionError:
+        print("На ноль делить нельзя!")
+
+print(divide(10, 2))
+print(divide(2, 0))
+print("_____________________________________________")
+def divide(a,b):
+    try:
+       return a / b
+    except ZeroDivisionError as ex:
+        print(f"Случилась ошибка: {ex}")
+
+print(divide(1, 2))
+print(divide(2, 0))
+
+
+
+
+
+
+

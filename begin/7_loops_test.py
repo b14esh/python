@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a1f9bf3faed4333e959c7f4f311c7cfc43a000a312459ee77cd99daa999260de
-size 167
+x=0
+while True:
+    print("Pokazi x=" + str(x))
+    x = x+1
+    if x == 100:
+         break
+
+
+for x in range(0,100,10):
+     print("Hello world" + str(x))
+

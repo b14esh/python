@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5c3b78ca61a95eea1eb8832e8d0a35bcf24264c8f611eaf96d50f6428e50f77f
-size 121
+from enum import Enum
+
+
+class GameStatus(Enum):
+    WON = 1
+    LOST = 2
+    IN_PROGRESS = 3
+    NOT_STARTED = 4

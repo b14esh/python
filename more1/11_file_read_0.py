@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cdf91f31aeb831bd6794def58e0ba657703628d0dd9ad931b7bc49b122d0ee3f
-size 487
+# чтение / изменение / создание файлов файлов функция open()
+# r - read / чтение
+# w - /rewrite / write / create / перезапись / запись / создание
+# a - append / добавление
+# b - binary mode / 
+
+file = open('11.txt', 'r', encoding='utf-8') # по умолчанию используется read \ можно 'r' не указывать
+print(file.read())
+file.close() # закрыть файл
+

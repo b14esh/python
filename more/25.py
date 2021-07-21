@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7c657fe01aa622440dfbfaf001689b02a9996f5b915ecc585b64ac0bcbdf3558
-size 517
+# декораторы
+# позволяют завернуть выводл одной функции в другую
+# !!! декораторы замедляют выводы функции
+def decorator(func):
+    def wrapper():
+        print("Код до выполнения функции")
+        func()
+        print("Код, сработал после выполнения")
+    return wrapper
+@decorator
+def show():
+  print("Я обычная функция")
+
+#show = decorator(show)
+show()

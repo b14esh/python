@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ac2ac42519f9cadb797fdc4a427a50fa4d417d38847bb1f29886baaf7102859d
-size 174
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('',  include('weather.urls')),
+]

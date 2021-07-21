@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c9fd5af83882e0fcc08a2555e22b6533e2c805d39617387e5cf3b7779dbd5893
-size 801
+# Программа для копирования бинарного файла / картинка, видео, музыка / мультимедиа  / текстовый файл также будет успешно копирован
+# Тут есть небольшая проблема, что-бы копировать бинарные файлы,
+# необходимо выставить соответсвующие отребуты 'rb' и 'wb'для функции open(),
+# пример open(имя_файла, 'rb')
+
+filename1 = input('Какой файл забекапить?: ')
+filename2 = 'backup_' + filename1
+file1 = open(filename1, 'rb')
+file2 = open(filename2, 'wb')
+
+file2.write(file1.read())
+
+file1.close()
+file2.close()
+
+print('Бэкап завершен!')

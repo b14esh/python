@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:38cbdf84431afb9fc96447ba5376533df688db52c1aae498fcb978bc999a725d
-size 364
+file = None
+try:
+    file = open(r'c:\file\zxc.txt')
+    data = file.read()
+except FileNotFoundError as ex:
+    print(f'Error has occured. Description: {ex.strerror}')
+else:
+    print('maybe else')
+finally: # будет испольненно в любом случае
+    print('Final')
+    if file:
+        file.close()
+print('doing some work here')

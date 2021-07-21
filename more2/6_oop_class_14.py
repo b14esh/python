@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7a0909f80f3cb23c396bae8129dc200120e75fc36456dfddd112f046a030ba3e
-size 281
+class Animal:
+    def __init__(self):
+        self.health = 100
+
+    def hit(self, damage):
+        self.health -= damage
+
+class Carnivour(Animal):
+    def __init__(self):
+        super().__init__()
+        self.legs = 4
+
+c = Carnivour()
+c.hit(55)
+
+print(c.health)

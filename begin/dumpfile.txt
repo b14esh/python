@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:abfc4a234392a5506345bf5664ef2466a861c2683377a6c0ac1039834d2cddf3
-size 133
+﻿lala.vaza@ya.ru
+Lala Vaaza
+
+hd-fd@vvv.net
+Zaza Igg
+
+zaeer@intel.com
+Zurik Vinger
+
+ag.ir.ir@mail.com
+Agiriza Fonker
+
+

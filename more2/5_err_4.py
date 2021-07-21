@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9b64b0eb8c993aa73cc732a38afb5531a6918ddd3ef0c94808e93b492c0af710
-size 449
+# пример ошибки....
+import math
+
+def calc_square(ab,ac, bc):
+    p = (ab + ac + bc) /2
+    s = math.sqrt(p*(p-ab)*(p-ac)*(p-bc))
+    return s
+
+square = calc_square(10, 10, 10)
+print(square)
+
+
+square = calc_square(-2, 8, 8) # ошибочка # не может быть сторона треугольнака отрецательной
+print(square) # но тем немение код исполняется .....
+
+
+
+

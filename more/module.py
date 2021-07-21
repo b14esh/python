@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:073a958940db7aef140b3bae62ca9e856d28a5b5c7b7e038f543275997c15e08
-size 370
+def hi():
+    print("Hello world!!!")
+
+def add (x, y):
+    return x + y
+
+if __name__ == "__main__": ### Если есть это строка, и запустить этот скрипт то мы увидем hello
+    print("hello")         ### Если подключить как модуль к другому скрипту то мы не увидем hello

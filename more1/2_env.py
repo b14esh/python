@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:963ad8ae95eb8d273e09d1634226fe3ef8ee8fa7a16cf922fe1f627fda06c1a9
-size 641
+# Переменные
+# Переменные должны начинаться с буквы
+# Переменные могут содержать цифры и нижниее подчеркивание _
+# Переменные регистро чуствительные
+test = 1
+test333 = 2
+test123_test2 = 4
+Test = 20
+print("Переменная Test = " +str(Test) +"\nПеременная test =  " + str(test))
+
+#Удаление переменной \ команда del
+test = 25
+#del test  # удалит переменную и будет ошибка при print() # NameError: name 'test' is not defined
+print(test)

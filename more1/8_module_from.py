@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:eb7762edb8fdad351efc7f45d218720dcad18101825bdc5052cd4429b768d7f5
-size 533
+# подключить из модуля одну функцию ко всем функцимя можно будет обращатся по имени
+from random import  randint
+print(randint(1, 10))
+
+from math import sqrt
+print(sqrt(25))
+
+from math import sqrt, pi
+print(sqrt(25))
+print(pi)
+
+# импортируется все из модуля т.е. ко всем функцимя можно будет обращатся по имени
+from random import *
+print(randint(1, 10))
+
+from math import *
+print(pi)

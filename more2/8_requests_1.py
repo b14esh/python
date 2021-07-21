@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0bef21859d16a53f7fdb83f596c84aada24c81e1dc0e8a4b508ddb41ffa85163
-size 405
+import requests
+from requests import HTTPError
+
+for url in ["https://b14esh.com", "https://b14esh.com/xxxxxxxxxxxxxxxxxx"]:
+    try:
+        response = requests.get(url)
+        response.raise_for_status()
+    except HTTPError as http_err:
+        print(f"Error: {http_err}")
+    except Exception as err:
+        print(f'Unknown error: {err}')
+    else:
+        print("Conected Successfully!")

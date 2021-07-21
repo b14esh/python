@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:11d5bbf16330937b587848cd1863b8f9a43d03a7ac2c079fbc07e08f90143b63
-size 329
+#  Пример с git и JSON
+import requests
+import json
+response = requests.get("https://api.github.com")
+print(response.text)
+data = response.json()
+
+print(data)
+
+print(data["current_user_url"])
+print(data["current_user_authorizations_html_url"])
+print(data["authorizations_url"])
+print(data["code_search_url"])

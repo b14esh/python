@@ -1,3 +1,32 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4f08e983b08ee04944740cb332b01ad4397abb74bc645a86aea722ff06297a88
-size 603
+# Магические методы \ двойное подчеркивание
+
+class Point():
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __str__(self):
+        return f'Point x={self.x}, y = {self.y}'
+
+p = Point(3, 4)
+print(p)
+
+
+
+class Road():
+    def __init__(self, length):
+        self.length = length
+
+    def __len__(self):
+        return self.length
+
+    def __str__(self):
+        return f'A road of length: {self.length}'
+
+    def __del__(self):
+        print(f'The road has been destroyed')
+
+r = Road(100)
+print(r)
+len(r)
+del r

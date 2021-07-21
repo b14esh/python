@@ -49,3 +49,77 @@ $ForIndex = $ForIndex -1 #  Выполняется после каждого п�
 {
 $ForIndex # Полезная нагрузка
 }
+
+
+Цикл For, пример бреда, введение в переборы
+cls
+$srvl = Get-Service
+for (
+      [int]$i = 0;
+      $i -LT $srvl.Count;
+      $i = $i + 1
+    )
+    {
+     $srvl[$i].Name
+    }
+
+
+Перебор ForEach
+cls
+$srv = Get-Service
+
+ForEach ($s in $srv)
+{
+   $s.Name
+}
+
+Цикл IF
+cls
+[int]$Test9 =5
+$Test9
+
+if ($Test9 -GT 3)
+{
+Write-Host "Больше трех"
+
+}
+
+
+Цикл IF ELSE
+cls
+[int]$Test9 =2
+$Test9
+
+if ($Test9 -GT 3)
+{
+Write-Host "Больше трех"
+
+}
+else
+{
+Write-Host "Не больше трех"
+}
+
+
+Цикл IF ELSEIF ELSE
+cls
+[int]$Test9 = Get-Random -Maximum 5 -Minimum -5
+$Test9
+
+if ($Test9 -GT 4)
+{
+Write-Host "число больше 4"
+
+}
+elseif ($Test9 -GT 3)
+{
+Write-Host "число больше 3"
+}
+elseif ($Test9 -GT 0)
+{
+Write-Host "больше 0"
+}
+else
+{
+Write-Host "число отрицательное"
+}

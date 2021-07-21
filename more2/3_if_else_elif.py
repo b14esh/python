@@ -1,3 +1,35 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6adcde0e8f08c51e4c7423b0db5cabd840d61197bb920e14a0e07283d6c4076a
-size 562
+# логические операторы
+if True:
+    print('Indeed, true.')
+
+print('\n')
+
+if 3 > 2:
+    print('3 is greater than 2')
+
+print('\n')
+
+if 3 < 2:
+    print('3 is less than 2')
+
+print('\n')
+
+is_admin = True
+if is_admin:
+    print("It's admin, look at him!")
+
+print('\n')
+
+#selected_character = input()
+selected_character = 'xxx'
+
+if selected_character == '1':
+    print('Hi 1')
+elif selected_character == '2':
+    print('twoooo 2')
+elif selected_character == '3':
+    print('LOLOLO 3')
+else:
+    print('Hmm... ')
+
+

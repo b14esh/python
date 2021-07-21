@@ -1,3 +1,1 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b6e506ce317834d6a318208b7aba4fa4c887340b195820d29b063b3c0a9df2cd
-size 153
+{"tournaments": [{"name": "Aer 19", "year": 2019}, {"name": "Aer 17", "year": 2017}, {"name": "Aer 15", "year": 2015}, {"name": "Aer 12", "year": 2012}]}

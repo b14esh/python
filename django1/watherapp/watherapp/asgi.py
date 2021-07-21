@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:953f8fa2057ef017fd109c260354da1a02eb604ac8a91179694d84837840804a
-size 411
+"""
+ASGI config for watherapp project.
+
+It exposes the ASGI callable as a module-level variable named ``application``.
+
+For more information on this file, see
+https://docs.djangoproject.com/en/dev/howto/deployment/asgi/
+"""
+
+import os
+
+from django.core.asgi import get_asgi_application
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'watherapp.settings')
+
+application = get_asgi_application()

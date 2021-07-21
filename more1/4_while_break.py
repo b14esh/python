@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:427a94cce034c54cdc1599839ec44281543c4271e9c1090fd2919c67909ea45d
-size 522
+# Бесконечный цикл
+# break прерывание выполнения цыкла
+print('Программа 1')
+i = 1
+while 1 == 1:
+    print('Привет,' + str(i) )
+    i += 1
+    #if i == 10001:
+    if i == 11:
+        break
+print('Программа 1 завершина')
+
+print('\nПрограмма 2')
+i = 100
+while i >= 20:
+    print('Обратный отсчет пошол: ' + str(i))
+    i -= 15
+    if i <= 20:
+        break
+print('Программа 2 завершина')

@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ac2571a239b10ed3ab57ed4894f7b6bf95f55bfc9a0fcccd22769a2ef253af61
-size 429
+# Программа для копирования текстового файла
+filename1 = input('Введите название копируемого файла: ')
+filename2 = input('Введите куда скопировать файл: ')
+file1 = open(filename1, 'r')
+file2 = open(filename2, 'w')
+
+file2.write(file1.read())
+
+file1.close()
+file2.close()
+
+print('Копирование заверщенно')

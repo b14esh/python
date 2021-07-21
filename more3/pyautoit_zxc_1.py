@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4a98a06784ebef2a29e8fa5210892046b64350b2f26557d81aa6480f76ab3ad5
-size 296
+import autoit, time
+# ждем 10 секунд и жмем кнопи из файла
+time.sleep(10)
+#autoit.send("hello world{!} чсч аыаы аааццукцец ецецун ссс")
+f = open(f"zxc.txt", 'r', encoding="utf-8")
+
+for word in f:
+    autoit.send(word)
+    time.sleep(5)

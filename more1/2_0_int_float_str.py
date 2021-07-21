@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a2beedb6053dcf0a00949ef423f8b389e47ab73a82ac9147c0dbfa8d45f85c89
-size 513
+# Конвертация данных
+test = 'Тестовая строка'
+test2 = 2
+
+print(test + str(test2))
+
+# Для конвертации данных существует три функции
+# int() - целые числа
+# flot() - дробные числа
+# str() - строки
+# Вот так их можно использовать
+
+print(test2)
+print(float(test2))
+print(int(float(test2)))
+print(str(int(float(test2))))
+
+print(int("3" + "4"))
+
+print(float("210" * int("2")))

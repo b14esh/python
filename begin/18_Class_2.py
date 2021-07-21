@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1027ff2e0983f0e33e2b6512332b10a273ab425c423ce8a11c2cc2e45118bf92
-size 436
+from hero import *
+from mod16 import pp
+
+
+# ------------- MAIN
+myhero1 = Hero("Vurdalak", 5, "Orc")
+myhero2 = Hero("Alex", 4, "Humman")
+mysuperhero = SuperHero("Mosia", 10, "elf", 5)
+pp()
+myhero1.show_hero()
+pp()
+myhero2.show_hero()
+pp()
+mysuperhero.show_hero()
+pp()
+mysuperhero.makemagic()
+mysuperhero.makemagic()
+mysuperhero.makemagic()
+mysuperhero.makemagic()
+mysuperhero.show_hero()
+mysuperhero.magic = 250
+pp()

@@ -1,3 +1,1 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:de33579bf7e3eae6c9b6d7ba33ba12713ef9d6a0bd248c27475016ec0ca855f5
-size 20
+Привет мир!

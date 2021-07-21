@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6e5985d8c8a9310e3576ac6f52befd76959e1e65dedd0773fd89e44c394a2a7a
-size 241
+def main():
+    pass # эта функцыя ничего не делает / функция main() пустая
+print("test") # просто что-то выводит
+
+if 1 == 1:
+    pass # Создали пустое условие

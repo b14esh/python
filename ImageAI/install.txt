@@ -1,3 +1,53 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f879f776edcb19cd1d2b63f7f39c1919294b9bbcbf728e9e839fe87133f3f8b7
-size 2276
+﻿# windows 10 x64
+# на python 3.6 работает нормально
+
+
+# https://itproger.com/news/174 # гайд
+# https://www.youtube.com/watch?v=Uj4O2_dwRiA&list=PL0lO_mIqDDFXgfuxOEDTCwsWmKezOaDTu&index=24 # видео на youtube
+# https://github.com/OlafenwaMoses/ImageAI
+# https://imageai.readthedocs.io/en/latest/
+# https://imageai.readthedocs.io/en/latest/detection/ # там RetinaNet необходимо будет скачать
+# https://github.com/OlafenwaMoses/ImageAI/releases/download/1.0/resnet50_coco_best_v2.0.1.h5 # RetinaNet скачиваем 146Мб
+
+# tensorflow # беда с установкой
+# https://www.tensorflow.org/install/pip
+# https://www.tensorflow.org/install/pip#windows_1
+# pip install -U tensorflow
+# pip3 install --upgrade tensorflow
+
+#python -m pip install --upgrade pip
+#python -m pip install wheel  # not necessary
+#python -m pip install tensorflow
+
+# ERROR: Could not find a version that satisfies the requirement tensorflow (from versions: none)
+# pip install https://storage.googleapis.com/tensorflow/windows/gpu/tensorflow_gpu-2.2.0-cp38-cp38-win_amd64.whl    #GPU
+# pip install https://storage.googleapis.com/tensorflow/windows/cpu/tensorflow_cpu-2.2.0-cp38-cp38-win_amd64.whl    #CPU
+
+# крайний вариант установки tensorflow
+# ERROR: tensorflow_cpu-2.2.0-cp38-cp38-win_amd64.whl is not a supported wheel on this platform.
+# https://github.com/tensorflow/tensorflow/blob/master/tensorflow/tools/pip_package/setup.py # качаем скрипт автоустановки
+# python setup.py install   # устанавливаем
+# pip install --upgrade tensorflow
+
+
+
+# есть еще вариант установить чере anaconda
+# https://automaticaddison.com/how-to-install-tensorflow-2-on-windows-10/
+# anaconda promt >
+# conda create -n tf_2 python
+# conda activate tf_2
+# python --version
+# pip install --upgrade tensorflow
+# pip install -U
+# pip install opencv-python
+# pip install keras
+# pip install imageai --upgrade
+# pip install -U numpy
+# python mayin.py
+
+
+
+# последний шанс
+# Идем сюда https://www.lfd.uci.edu/~gohlke/pythonlibs/
+# Качаем нужный пакет
+# pip install name_package.whl

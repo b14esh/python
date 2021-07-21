@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:502f342a4443956027e426acdd9c7514d875a440028bae2afbd2a187d51783cb
-size 519
+numbers = list(range(100))
+print(numbers)
+
+numbers = list(range(101))
+print(numbers)
+
+numbers = list(range(50, 101))
+print(numbers)
+
+#numbers = list(range(начало, конец, шаг))
+numbers = list(range(0, 101, 2))
+print(numbers)
+
+numbers = list(range(0, 100, 10))
+print(numbers)
+
+numbers = list(range(0, 20, 5))
+print(numbers)
+
+numbers = list(range(0, 120, 20))
+print(numbers)
+
+numbers = list(range(0, 11, 2))
+print(numbers)
+
+
+nums = list(range(3, 15, 3))
+print(nums)
+print(nums[2])

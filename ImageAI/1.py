@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b80a5db71deec9fd2c8298ddd1ace2aecc86a6feeebc336944adee3a566e9df3
-size 546
+from imageai.Detection import ObjectDetection
+import os
+
+execution_path = os.getcwd()
+
+detector = ObjectDetection()
+detector.setModelTypeAsRetinaNet()
+detector.setModelPath( os.path.join(execution_path , "resnet50_coco_best_v2.0.1.h5"))
+detector.loadModel()
+detections = detector.detectObjectsFromImage(input_image=os.path.join(execution_path , "objects.jpg"), output_image_path=os.path.join(execution_path , "imagenew.jpg"))
+
+for eachObject in detections:
+    print(eachObject["name"] , " : " , eachObject["percentage_probability"] )

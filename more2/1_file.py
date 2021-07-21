@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:18e86b6cefecb073074e1e2ac70ed802416fe3fb18738dc95b46778fbf90c7fd
-size 513
+# Запишим байты в файл и прочитаем его...
+# int - это байты
+mass = [12, 255, 9, 33,] # создали список байтов
+
+# записали в файл
+with open(r'file.bin', 'wb') as file:  # with заботится о закрытии файла  file.close не требуется
+    file.write(bytes(mass))
+
+# прочитали из файла
+with open(r'file.bin', 'rb') as file:
+    data = file.read()
+    for b in data:
+        print(int(b))
+

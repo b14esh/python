@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5ae759419977c303cc31c82937057857c95484ca9130cf5c8918e7b0852d7344
-size 889
+# countinue заставляет ничего не делать циклу
+# В приере получам четные числа
+print("Программа получаем четные числа.")
+number = 0
+while number <= 10:
+    number += 1
+    if (number % 2) != 0: # Если модуль чила не равен 0. Ничего не делать. пропускаем
+        continue
+    print("Четное число : " + str(number))
+print("Программа завершина.")
+
+print("\nПрограмма получаем нечетные числа.")
+number = 0
+while number <= 9:
+    number += 1
+    if (number % 2) == 0: # Если модуль чила не равен 0. Ничего не делать. пропускаем
+        continue
+    print("Четное число : " + str(number))
+print("Программа завершина.")

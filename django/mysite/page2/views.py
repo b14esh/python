@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f069a7850948b6eed53de85a702981886cee99a0c00b4c31e216da9177c4d7aa
-size 251
+from django.shortcuts import render
+
+# Create your views here.
+
+def index(request):
+    return render(request, 'page2/index.html')
+
+# в папке static/page2 - лежат картинки
+# в папке template/page2 лежит index.html

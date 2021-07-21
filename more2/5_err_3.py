@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5faf6747349e1199fcec84eafed42fe5011e57c3bcb2728de94473383c1fa494
-size 497
+# https://docs.python.org/3/tutorial/errors.html - ошибки и описание
+
+
+def get_int():
+    while True:
+        try:
+            reply = int(input('Enter a number: '))
+            #break # все ок завершаем обработку
+            return reply
+        except:
+            print('Not a number!. try again')
+            continue # продолжаем цикл
+
+
+number = get_int() # допустим цыкл в переменную
+print(number)
+

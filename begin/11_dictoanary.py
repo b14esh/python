@@ -1,3 +1,32 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2209f4f6285be1597cc8cc69f942842464b054771b8632be30ced246cfcee875
-size 648
+# str используется только для цифр
+#   (----item------)
+#   (key)    (value)
+enemy = {
+    'loc_x': 70,
+    'loc_y': 50,
+    'color': 'green',
+    'health': 100,
+    'name': 'Mudillo',
+}
+
+print(enemy)
+
+print("Location x = " + str(enemy['loc_x']))
+print("Location Y= " + str(enemy['loc_y']))
+print("His name is: " + enemy['name'])
+
+enemy['rank'] = 'Admiral'
+print(enemy)
+
+del enemy['rank']
+print(enemy)
+
+enemy['loc_x'] = enemy['loc_x'] + 40
+enemy['health'] = enemy['health'] - 30
+if enemy['health'] < 80:
+    enemy['color'] = 'yellow'
+
+print(enemy)
+
+print(enemy.keys())
+print(enemy.values())

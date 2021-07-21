@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0d414cba5f77fe1674bcb0171e601d522a4d0abbe6e072e30cbc6be566357069
-size 248
+# Для работы с http \ https
+
+import requests
+
+# Запрос функция GET
+response = requests.get("https://b14esh.com")
+print(response)
+print(type(response))
+print(response.status_code)
+
+if response:
+    print("Works!")

@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2e53d16e21b8b785b07a13af16abbb8b7129d46fabfe4b05fc6eb32d54bdee39
-size 155
+# модули
+
+# рандомные числа
+import random
+#print(random.randint(1,100))
+for i in range(10):
+    print(random.randint(500,1000))
