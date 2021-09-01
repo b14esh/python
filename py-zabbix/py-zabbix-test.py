@@ -1,6 +1,3 @@
-#EHq6wrzrUi49nhx
-#py-zabbix-user
-
 from pyzabbix.api import ZabbixAPI
 
 ZABBIXURL = 'http://URL/zabbix/'
