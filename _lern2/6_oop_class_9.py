@@ -1,0 +1,19 @@
+class Animal:
+    def die(self):
+        print('bye-bye')
+        self.health = 0
+
+class Carnivour:
+    def hunt(self):
+        print('eating')
+        self.satiety = 100
+
+class Dog(Animal, Carnivour): # Множественные наследования
+    def bark(self):
+        print('woof-woof')
+
+dog = Dog()
+dog.bark()
+dog.hunt()
+dog.die()
+
